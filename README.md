@@ -1,3 +1,11 @@
+## notosanscjk-nougat
+* Replace NotoSansCJK for Nougat devices.
+* Please check your space in system(120m free).
+
+## Credit
+* Copyright (C) 2017 simonsmh <simonsmh@gmail.com>
+
+
 ## How to Create a Magisk Module
 1. Clone / download this repo
 2. Open `config.sh`, follow the instructions written at the beginning of the file. You should at least change `config.sh` and `module.prop`

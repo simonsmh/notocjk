@@ -1,8 +1,8 @@
-id=template
-name=Template Module
-version=v1
+id=notosanscjk-nougat
+name=NotoSansCJK(Nougat)
+version=1.0.0
 versionCode=1
-author=topjohnwu
-description=A short description
-support=http://forum.xda-developers.com/showthread.php?t=3432382
-donate=http://topjohnwu.github.io/donate
+author=simonsmh
+description=Replace NotoSansCJK for Nougat devices. Please check your space in system(120m free).
+support=https://github.com/simonsmh/magisk-notosanscjk-nougat
+donate=https://paypal.me/simonsmhsmh
