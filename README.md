@@ -1,6 +1,6 @@
 ## notosanscjk-nougat
-* Replace NotoSansCJK for Nougat devices.
-* Please check your space in system(120m free).
+* Add NotoSansCJK for Nougat devices.
+* Please check your space in magisk.img (120m free).
 
 ## Credit
 * Copyright (C) 2017 simonsmh <simonsmh@gmail.com>

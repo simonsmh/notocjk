@@ -1,2 +1,4 @@
+1.0.1
+    - fix index
 1.0.0
     - Initial release
