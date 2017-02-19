@@ -1,6 +1,0 @@
-1.0.2
-    - trying to fix rr bug
-1.0.1
-    - fix index
-1.0.0
-    - Initial release
