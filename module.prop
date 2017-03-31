@@ -4,3 +4,4 @@ version=1.0.2
 versionCode=3
 author=simonsmh
 description=Add NotoSansCJK for Nougat devices.
+template=3
