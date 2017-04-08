@@ -6,7 +6,7 @@ NOTICE:
 You should use latest Magisk manager to install this module.
 
 Resent fixes:
-Add DroidSansFallback.ttf (Full) which is missing in Oxygen OS.
+Add DroidSansFallback.ttf (Fullver) which is missing in some rom.
 
 #### Credit & Support
 
