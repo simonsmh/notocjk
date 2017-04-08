@@ -1,9 +1,12 @@
 #### NotoSansCJK (Nougat)
 
-Add NotoSansCJK for Nougat devices.
+NotoSansCJK full weight patch for Nougat devices.
 
 NOTICE:   
-You should use Magisk manager v4.2+ to install this module.
+You should use latest Magisk manager to install this module.
+
+Resent fixes:
+Add DroidSansFallback.ttf (Full) which is missing in Oxygen OS.
 
 #### Credit & Support
 

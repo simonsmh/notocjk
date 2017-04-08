@@ -1,7 +1,7 @@
 id=notosanscjk-nougat
 name=NotoSansCJK(Nougat)
-version=1.0.2
-versionCode=3
+version=1.0.3
+versionCode=4
 author=simonsmh
-description=Add NotoSansCJK for Nougat devices.
+description=NotoSansCJK full weight patch for Nougat devices.
 template=3
