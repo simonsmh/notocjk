@@ -340,8 +340,8 @@
         <font weight="350" style="normal" index="2">NotoSansCJK-DemiLight.ttc</font>
         <font weight="400" style="normal" index="2">NotoSansCJK-Regular.ttc</font>
         <font weight="500" style="normal" index="2">NotoSansCJK-Medium.ttc</font>
-        <font weight="700" style="normal" index="2">NotoSansCJK-Bold.ttc</font>
         <font weight="900" style="normal" index="2">NotoSansCJK-Black.ttc</font>
+        <font weight="700" style="normal" index="2">NotoSansCJK-Bold.ttc</font>
     </family>
     <family lang="zh-Hant">
         <font weight="100" style="normal" index="3">NotoSansCJK-Thin.ttc</font>
@@ -349,8 +349,8 @@
         <font weight="350" style="normal" index="3">NotoSansCJK-DemiLight.ttc</font>
         <font weight="400" style="normal" index="3">NotoSansCJK-Regular.ttc</font>
         <font weight="500" style="normal" index="3">NotoSansCJK-Medium.ttc</font>
-        <font weight="700" style="normal" index="3">NotoSansCJK-Bold.ttc</font>
         <font weight="900" style="normal" index="3">NotoSansCJK-Black.ttc</font>
+        <font weight="700" style="normal" index="3">NotoSansCJK-Bold.ttc</font>
     </family>
     <family lang="ja">
         <font weight="100" style="normal" index="0">NotoSansCJK-Thin.ttc</font>
@@ -358,8 +358,8 @@
         <font weight="350" style="normal" index="0">NotoSansCJK-DemiLight.ttc</font>
         <font weight="400" style="normal" index="0">NotoSansCJK-Regular.ttc</font>
         <font weight="500" style="normal" index="0">NotoSansCJK-Medium.ttc</font>
-        <font weight="700" style="normal" index="0">NotoSansCJK-Bold.ttc</font>
         <font weight="900" style="normal" index="0">NotoSansCJK-Black.ttc</font>
+        <font weight="700" style="normal" index="0">NotoSansCJK-Bold.ttc</font>
     </family>
     <family lang="ko">
         <font weight="100" style="normal" index="1">NotoSansCJK-Thin.ttc</font>
@@ -367,8 +367,8 @@
         <font weight="350" style="normal" index="1">NotoSansCJK-DemiLight.ttc</font>
         <font weight="400" style="normal" index="1">NotoSansCJK-Regular.ttc</font>
         <font weight="500" style="normal" index="1">NotoSansCJK-Medium.ttc</font>
-        <font weight="700" style="normal" index="1">NotoSansCJK-Bold.ttc</font>
         <font weight="900" style="normal" index="1">NotoSansCJK-Black.ttc</font>
+        <font weight="700" style="normal" index="1">NotoSansCJK-Bold.ttc</font>
     </family>
     <family lang="und-Zsye">
         <font weight="400" style="normal">NotoColorEmoji.ttf</font>
