@@ -1,7 +1,7 @@
 id=notosanscjk-nougat
 name=NotoSansCJK(Nougat)
 version=1.1
-versionCode=5
+versionCode=6
 author=simonsmh
 description=NotoSansCJK full weight patch for Nougat devices.
 template=3
