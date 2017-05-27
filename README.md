@@ -6,7 +6,7 @@ NOTICE:
 You should use latest Magisk manager to install this module.
 
 Resent fixes:
-Add DroidSansFallback.ttf (Fullver) which is missing in some rom.
+Fonts.xml mismatch problem.
 
 #### Credit & Support
 
