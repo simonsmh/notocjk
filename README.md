@@ -2,10 +2,10 @@
 
 NotoSansCJK full weight patch for Nougat devices.
 
-NOTICE:   
-You should use latest Magisk manager to install this module.
+#### NOTICE
 
-Resent fixes:
+* You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery.
+* Resent fixes:
 Fonts.xml mismatch problem.
 
 #### Credit & Support
