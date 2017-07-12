@@ -6,7 +6,7 @@ NotoSansCJK full weight patch for Nougat devices.
 
 * You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery.
 * Resent fixes:
-Fonts.xml mismatch problem.
+Magisk v13 Template v4 compatabilities
 
 #### Credit & Support
 
