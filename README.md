@@ -5,8 +5,9 @@ NotoSansCJK full weight patch for Nougat devices.
 #### NOTICE
 
 * You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery.
-* Resent fixes:
-Magisk v13 Template v4 compatabilities
+* If you notice some app (especially epub readers) not working after install this module, please see [this issue](https://github.com/Magisk-Modules-Repo/magisk-notosanscjk-nougat/issues/9).
+* Recent fixes:
+Magisk v14 Template 1400 compatabilities
 
 #### Credit & Support
 
