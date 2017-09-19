@@ -1,6 +1,6 @@
-#### NotoSansCJK (Nougat)
+#### NotoSansCJK (Nougat & Oreo)
 
-NotoSansCJK full weight patch for Nougat devices.
+NotoSansCJK full weight patch for Nougat and Oreo devices.
 
 #### NOTICE
 
