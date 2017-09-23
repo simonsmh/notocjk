@@ -5,7 +5,7 @@ Fonts are provided by [Google](https://github.com/googlei18n/noto-cjk).
 
 #### NOTICE
 
-* You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery.
+* You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery. When you are trying to uninstall or reinstall this module, be sure to delete /magisk/.core/fonts.xml first.
 * If you notice that some applications (especially epub readers) are not working properly after installing this module, please see [this issue](https://github.com/Magisk-Modules-Repo/magisk-notosanscjk-nougat/issues/9).
 * Recent fixes:  
 **Reinstall needed!** Newly implemented systemless fonts.xml working with NotoColorEmoji Blob Patch

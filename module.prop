@@ -1,7 +1,7 @@
 id=notosanscjk-nougat
 name=NotoSansCJK (Nougat&Oreo)
 version=1.5
-versionCode=8
+versionCode=10
 author=simonsmh
 description=NotoSansCJK full weight patch for Nougat & Oreo devices.
 template=1400
