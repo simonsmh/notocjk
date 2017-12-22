@@ -159,11 +159,13 @@ $LATESTARTSERVICE && cp -af $INSTALLER/common/service.sh $MODPATH/service.sh
 
 # migrating fonts.xml
 ui_print "- Migrating fonts.xml"
-if [ -f "/system/etc/fonts.xml" -o -f "/dev/magisk/mirror/system/etc/fonts.xml" ]; then
+if [ -f "/system/etc/fonts.xml" -o -f "/sbin/.core/magisk/mirror/system/etc/fonts.xml" -o -f "/dev/magisk/mirror/system/etc/fonts.xml" ]; then
   mkdir -p $MODPATH/system/etc/
   if [ ! -f /magisk/.core/fonts.xml -o ! -d /magisk/notocoloremoji-replacer ]; then
     ui_print "- Skipping compatability fixes"
-    if [ -f /dev/magisk/mirror/system/etc/fonts.xml ]; then
+    if [ -f /sbin/.core/magisk/mirror/system/etc/fonts.xml ]; then
+      cp -af /sbin/.core/magisk/mirror/system/etc/fonts.xml /magisk/.core/fonts.xml
+    elif [ -f /dev/magisk/mirror/system/etc/fonts.xml ]; then
       cp -af /dev/magisk/mirror/system/etc/fonts.xml /magisk/.core/fonts.xml
     else
       cp -af /system/etc/fonts.xml /magisk/.core/fonts.xml
@@ -177,7 +179,9 @@ fi
 
 # fallback compatability
 if [ ! -f /magisk/.core/fonts.xml ]; then
-  if [ -f /dev/magisk/mirror/system/etc/fonts.xml ]; then
+  if [ -f /sbin/.core/magisk/mirror/system/etc/fonts.xml ]; then
+    cp -af /sbin/.core/magisk/mirror/system/etc/fonts.xml /magisk/.core/fonts.xml
+  elif [ -f /dev/magisk/mirror/system/etc/fonts.xml ]; then
     cp -af /dev/magisk/mirror/system/etc/fonts.xml /magisk/.core/fonts.xml
   else
     cp -af /system/etc/fonts.xml /magisk/.core/fonts.xml
