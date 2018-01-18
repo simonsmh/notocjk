@@ -7,7 +7,7 @@ Fonts are provided by [Google](https://github.com/googlei18n/noto-cjk).
 
 * You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery. When you are trying to uninstall or reinstall this module, be sure to delete /magisk/.core/fonts.xml first.
 * Recent fixes:  
-Magisk v15 Template 1500 compatabilities
+Fix for magisk 15.3
 
 #### Credit & Support
 
