@@ -5,9 +5,9 @@ Fonts are provided by [Google](https://github.com/googlei18n/noto-cjk).
 
 #### NOTICE
 
-* You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery. When you are trying to uninstall or reinstall this module, be sure to delete /magisk/.core/fonts.xml first.
+* You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery.
 * Recent fixes:  
-Fix for magisk 15.3
+Drop compatability support with notocoloremoji-replacer
 
 #### Credit & Support
 
