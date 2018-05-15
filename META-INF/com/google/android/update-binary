@@ -113,8 +113,8 @@ cat "$TMPDIR/fonts/NotoSansCJK.ttc.part"* > "$TMPDIR/fonts/NotoSansCJK.ttc"
 
 # MD5 check
 CORRECTMD5=`cat "$TMPDIR/NotoSansCJK.ttc.md5"`
-MD5=`md5sum "$TMPDIR/fonts/NotoSansCJK.ttc"
-`
+MD5=`md5sum "$TMPDIR/fonts/NotoSansCJK.ttc"`
+
 if [ "$CORRECTMD5" = "$MD5" ]; then
 	ui_print "- MD5 check passed. Copying fonts to system."
 	mkdir -p "$MODPATH/system/fonts" >&2
