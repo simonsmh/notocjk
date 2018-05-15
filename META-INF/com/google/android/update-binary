@@ -107,10 +107,8 @@ mkdir -p $MODPATH
 # Extract files to system. Use your own method if needed
 ui_print "- Extracting module files"
 unzip -o "$ZIP" 'font/*' -d $TMPDIR >&2
-FONTPARTS=NotoSansCJK.ttc.part*
-FONTPATH=system/fonts
 mkdir -p $MODPATH/system/fonts >&2
-cat $TMPDIR/fonts/$FONTPARTS > $MODPATH/$FONTPATH/NotoSansCJK.ttc
+cat $TMPDIR/fonts/NotoSansCJK.ttc.part* > $MODPATH/$FONTPATH/NotoSansCJK.ttc
 
 
 # Remove placeholder

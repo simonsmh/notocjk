@@ -1,6 +1,7 @@
+#!/sbin/sh
+
 FONTPATH=`pwd`/fonts
 FONT=NotoSansCJK.ttc
-
 
 if [ -f "$FONTPATH/$FONT" ]; then
 	MD5=`md5sum "$FONTPATH/$FONT" | cut -d ' ' -f1`
