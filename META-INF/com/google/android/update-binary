@@ -112,8 +112,8 @@ unzip -o "$ZIP" "fonts/*" -d $TMPDIR >&2
 cat "$TMPDIR/fonts/NotoSansCJK.ttc.part"* > "$TMPDIR/fonts/NotoSansCJK.ttc"
 
 # MD5 check
-CORRECTMD5=`cat "$TMPDIR/NotoSansCJK.ttc.md5"`
-MD5=`md5sum "$TMPDIR/fonts/NotoSansCJK.ttc"`
+CORRECTMD5=`cat "$TMPDIR/fonts/NotoSansCJK.ttc.md5"`
+MD5=`md5sum "$TMPDIR/fonts/NotoSansCJK.ttc" | cut -d ' ' -f1`
 
 if [ "$CORRECTMD5" = "$MD5" ]; then
 	ui_print "- MD5 check passed. Copying fonts to system."
@@ -121,6 +121,7 @@ if [ "$CORRECTMD5" = "$MD5" ]; then
 	cp "$TMPDIR/fonts/NotoSansCJK.ttc" "$MODPATH/system/fonts/NotoSansCJK.ttc" >&2
 else
 	ui_print "- MD5 checked failed. Maybe you should re-download this module."
+fi
 
 # Remove placeholder
 rm -f $MODPATH/system/placeholder 2>/dev/null
