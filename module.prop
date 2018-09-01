@@ -4,4 +4,4 @@ version=1.6.1
 versionCode=14
 author=simonsmh
 description=NotoSansCJK full weight patch for Nougat & Oreo devices.
-minMagisk=1500
+minMagisk=17000
