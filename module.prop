@@ -1,7 +1,7 @@
 id=notocjk
-name=NotoCJK (P)
+name=NotoCJK
 version=1.0
 versionCode=1
 author=simonsmh
-description=NotoCJK full weight patch (Both Sans and Serif) for Android P devices.
+description=NotoCJK (NotoSansCJK & NotoSerifCJK) full weight patch for Android devices.
 minMagisk=17000
