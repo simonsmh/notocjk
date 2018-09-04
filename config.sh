@@ -41,7 +41,7 @@ LATESTARTSERVICE=false
 
 print_modname() {
   ui_print "*******************************"
-  ui_print " Magisk NotoSansCJK for Nougat "
+  ui_print "       Magisk NotoCJK (P)      "
   ui_print "*******************************"
 }
 

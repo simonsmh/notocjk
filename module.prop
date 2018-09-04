@@ -1,7 +1,7 @@
-id=notosanscjk-nougat
-name=NotoSansCJK (Nougat&Oreo)
-version=1.6.1
-versionCode=14
+id=notocjk
+name=NotoCJK (P)
+version=1.0
+versionCode=1
 author=simonsmh
-description=NotoSansCJK full weight patch for Nougat & Oreo devices.
+description=NotoCJK full weight patch (Both Sans and Serif) for Android P devices.
 minMagisk=17000
