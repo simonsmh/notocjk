@@ -4,4 +4,3 @@ version=2.0
 versionCode=3
 author=simonsmh
 description=NotoCJK (NotoSansCJK & NotoSerifCJK) full weight patch for Android devices.
-minMagisk=17000

@@ -1,19 +1,19 @@
-#### NotoCJK
+# NotoCJK
 
 NotoSansCJK & NotoSerifCJK full weight patch for Android devices.
 * NotoSansCJK full weight patch applies to Android N+
 * NotoSerifCJK full weight patch applies to Android P+
 Fonts are provided by [Google](https://github.com/googlei18n/noto-cjk).
 
-#### NOTICE
+## NOTICE
 
 * You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery.
-* Recent fixes:  
-NotoSansCJK 2.0 update
+* Recent fixes:
+New Module Format.
 HK is pending & waiting for Google solution in later android versions.
 
-#### Credit & Support
+## Credit & Support
 
-* Copyright (C) 2017-2018 simonsmh <simonsmh@gmail.com>
+* Copyright (C) 2017-2019 simonsmh <simonsmh@gmail.com>
 * Any issue or pull request is welcomed.
 * Star this module at [GitHub](https://github.com/Magisk-Modules-Repo/magisk-notocjk).
