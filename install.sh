@@ -137,7 +137,7 @@ on_install() {
 
   # migrating fonts.xml
   ui_print "- Migrating fonts.xml"
-  [[ -d /sbin/.core/mirror ]] && MIRRORPATH=/sbin/.core/mirror || unset MIRRORPATH
+  [[ -d /sbin/.magisk/mirror ]] && MIRRORPATH=/sbin/.magisk/mirror || unset MIRRORPATH
   FILE=fonts.xml
   FILEPATH=/system/etc/
   if [ -f $MIRRORPATH$FILEPATH$FILE ]; then
