@@ -13,7 +13,7 @@ Fonts are provided by [Google](https://github.com/googlei18n/noto-cjk).
 
 * Recent fixes:
 
-Update fonts files for NotoSansCJK 2.001
+Update project structure.
 
 * Known issues:
 
@@ -21,6 +21,6 @@ HK fonts style is pending & waiting for Google solution in later android version
 
 ## Credit & Support
 
-* Copyright (C) 2017-2019 simonsmh <simonsmh@gmail.com>
+* Copyright (C) 2017-2020 simonsmh <simonsmh@gmail.com>
 * Any issue or pull request is welcomed.
 * Star this module at [GitHub](https://github.com/Magisk-Modules-Repo/magisk-notocjk).
