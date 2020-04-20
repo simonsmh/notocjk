@@ -1,4 +1,6 @@
 # NotoCJK
+[![Upload zip](https://github.com/Magisk-Modules-Grave/notocjk/workflows/Upload%20zip/badge.svg)](https://github.com/Magisk-Modules-Grave/notocjk/actions)
+[![Download](https://img.shields.io/github/downloads/Magisk-Modules-Grave/notocjk/total.svg)](https://github.com/Magisk-Modules-Grave/notocjk/releases)
 
 NotoSansCJK & NotoSerifCJK full weight patch for Android devices.
 
@@ -23,4 +25,4 @@ HK fonts style is pending & waiting for Google solution in later android version
 
 * Copyright (C) 2017-2020 simonsmh <simonsmh@gmail.com>
 * Any issue or pull request is welcomed.
-* Star this module at [GitHub](https://github.com/Magisk-Modules-Repo/magisk-notocjk).
+* Star this module at [GitHub](https://github.com/Magisk-Modules-Grave/magisk-notocjk).
