@@ -20,7 +20,7 @@ Currently, this module is still maintained. It was used to be stored at official
 
 * Recent fixes:
 
-Update project structure.
+Update for magisk tmpfs location changes.
 
 * Known issues:
 

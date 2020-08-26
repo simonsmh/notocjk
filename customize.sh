@@ -1,5 +1,5 @@
+[ -x "$(which magisk)" ] && MIRRORPATH=$(magisk --path)/.magisk/mirror || unset MIRRORPATH
 ui_print "- Migrating fonts.xml"
-[[ -d /sbin/.magisk/mirror ]] && MIRRORPATH=/sbin/.magisk/mirror || unset MIRRORPATH
 FILE=fonts.xml
 FILEPATH=/system/etc/
 if [ -f $MIRRORPATH$FILEPATH$FILE ]; then
