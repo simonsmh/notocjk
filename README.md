@@ -20,7 +20,7 @@ Currently, this module is still maintained. It was used to be stored at official
 
 * Recent fixes:
 
-Update for magisk tmpfs location changes.
+Update NotoSansCJK 2.002
 
 * Known issues:
 
