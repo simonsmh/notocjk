@@ -20,7 +20,7 @@ Currently, this module is still maintained. It was used to be stored at official
 
 * Recent fixes:
 
-Update NotoSansCJK 2.002
+Fix for misreplaced OEM fonts
 
 * Known issues:
 
@@ -28,6 +28,6 @@ HK fonts style is pending & waiting for Google solution in later android version
 
 ## Credit & Support
 
-* Copyright (C) 2017-2020 simonsmh <simonsmh@gmail.com>
+* Copyright (C) 2017-2021 simonsmh <simonsmh@gmail.com>
 * Any issue or pull request is welcomed.
 * Star this module at [GitHub](https://github.com/simonsmh/notocjk).
