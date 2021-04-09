@@ -4,7 +4,7 @@
 
 NotoSansCJK & NotoSerifCJK full weight patch for Android devices.
 
-* NotoSansCJK full weight patch applies to Android N+
+* NotoSansCJK VF support as full weight patch applies to Android O+
 * NotoSerifCJK full weight patch applies to Android P+
 
 Fonts are provided by [Google](https://github.com/googlei18n/noto-cjk).

@@ -2,7 +2,7 @@
 ui_print "- Migrating fonts.xml"
 FILE=fonts.xml
 FILEPATH=/system/etc/
-if [ -f $MIRRORPATH$FILEPATH$FILE ]; then
+if [ $API -ge "26" ] && [ -f $MIRRORPATH$FILEPATH$FILE ]; then
 mkdir -p $MODPATH$FILEPATH
 cp -af $MIRRORPATH$FILEPATH$FILE $MODPATH$FILEPATH$FILE
 sed -i '
