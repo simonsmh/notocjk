@@ -20,7 +20,7 @@ Currently, this module is still maintained. It was used to be stored at official
 
 * Recent fixes:
 
-Fix for misreplaced OEM fonts
+Update for NotoSansCJK 2.003
 
 * Known issues:
 
