@@ -20,7 +20,7 @@ Currently, this module is still maintained. It was used to be stored at official
 
 * Recent fixes:
 
-Update for NotoSansCJK 2.003
+Use VF for NotoSansCJK to shrink module size.
 
 * Known issues:
 
