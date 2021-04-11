@@ -1,8 +1,10 @@
 [ -x "$(which magisk)" ] && MIRRORPATH=$(magisk --path)/.magisk/mirror || unset MIRRORPATH
-ui_print "- Migrating fonts.xml"
-FILE=fonts.xml
+FILES="fonts.xml fonts_base.xml"
 FILEPATH=/system/etc/
+for FILE in $FILES
+do
 if [ -f $MIRRORPATH$FILEPATH$FILE ]; then
+ui_print "- Migrating $FILE"
 mkdir -p $MODPATH$FILEPATH
 cp -af $MIRRORPATH$FILEPATH$FILE $MODPATH$FILEPATH$FILE
 sed -i 's/<alias name="serif-bold" to="serif" weight="700" \/>/<alias name="serif-thin" to="serif" weight="100" \/>\n<alias name="serif-light" to="serif" weight="300" \/>\n<alias name="serif-medium" to="serif" weight="400" \/>\n<alias name="serif-semi-bold" to="serif" weight="500" \/>\n<alias name="serif-bold" to="serif" weight="700" \/>\n<alias name="serif-black" to="serif" weight="900" \/>/g
@@ -35,11 +37,9 @@ sed -i '
 /<family lang=\"ko\">/,/<\/family>/ {:a;N;/<\/family>/!ba;
 s/<family lang=\"ko\">.*Noto.*CJK.*<\/family>/<family lang="ko">\n<font weight="100" style="normal" index="1">NotoSansCJK-Thin.ttc<\/font>\n<font weight="300" style="normal" index="1">NotoSansCJK-Light.ttc<\/font>\n<font weight="350" style="normal" index="1">NotoSansCJK-DemiLight.ttc<\/font>\n<font weight="400" style="normal" index="1">NotoSansCJK-Regular.ttc<\/font>\n<font weight="500" style="normal" index="1">NotoSansCJK-Medium.ttc<\/font>\n<font weight="700" style="normal" index="1">NotoSansCJK-Bold.ttc<\/font>\n<font weight="900" style="normal" index="1">NotoSansCJK-Black.ttc<\/font>\n<font weight="200" style="normal" index="1" fallbackFor="serif">NotoSerifCJK-ExtraLight.ttc<\/font>\n<font weight="300" style="normal" index="1" fallbackFor="serif">NotoSerifCJK-Light.ttc<\/font>\n<font weight="400" style="normal" index="1" fallbackFor="serif">NotoSerifCJK-Regular.ttc<\/font>\n<font weight="500" style="normal" index="1" fallbackFor="serif">NotoSerifCJK-Medium.ttc<\/font>\n<font weight="600" style="normal" index="1" fallbackFor="serif">NotoSerifCJK-SemiBold.ttc<\/font>\n<font weight="700" style="normal" index="1" fallbackFor="serif">NotoSerifCJK-Bold.ttc<\/font>\n<font weight="900" style="normal" index="1" fallbackFor="serif">NotoSerifCJK-Black.ttc<\/font>\n<\/family>/};
 ' $MODPATH$FILEPATH$FILE
-if [ ! $(cat $MODPATH$FILEPATH$FILE|grep DroidSansFallback.ttf) ]; then
-sed -i 's/<\/familyset>/<family>\n<font weight="400" style="normal">DroidSansFallback.ttf<\/font>\n<\/family>\n<\/familyset>/g' $MODPATH$FILEPATH$FILE
-fi
 else
 ui_print "- Migration FAILED. Nothing have done to your system."
 fi
-
-rm $MODPATH/LICENSE* $MODPATH/*.py 2>/dev/null
+done
+ui_print "- Migration done."
+rm $MODPATH/LICENSE* 2>/dev/null
