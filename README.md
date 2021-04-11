@@ -20,7 +20,7 @@ Currently, this module is still maintained. It was used to be stored at official
 
 * Recent fixes:
 
-Use VF for NotoSansCJK to shrink module size.
+Use NotoSansCJK non-VF at 400 weight for possibly missing symbol.
 
 * Known issues:
 
