@@ -1,8 +1,10 @@
 [ -x "$(which magisk)" ] && MIRRORPATH=$(magisk --path)/.magisk/mirror || unset MIRRORPATH
-ui_print "- Migrating fonts.xml"
-FILE=fonts.xml
+FILES="fonts.xml fonts_base.xml"
 FILEPATH=/system/etc/
+for FILE in $FILES
+do
 if [ $API -ge "26" ] && [ -f $MIRRORPATH$FILEPATH$FILE ]; then
+ui_print "- Migrating $FILE"
 mkdir -p $MODPATH$FILEPATH
 cp -af $MIRRORPATH$FILEPATH$FILE $MODPATH$FILEPATH$FILE
 sed -i '
@@ -39,5 +41,6 @@ fi
 else
 ui_print "- Migration FAILED. Nothing have done to your system."
 fi
-
-rm $MODPATH/LICENSE* $MODPATH/*.py 2>/dev/null
+done
+ui_print "- Migration done."
+rm $MODPATH/LICENSE* 2>/dev/null
