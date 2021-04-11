@@ -38,6 +38,7 @@ s/<family lang=\"ko\">.*Noto.*CJK.*<\/family>/<family lang="ko">\n<font weight="
 if [ ! $(cat $MODPATH$FILEPATH$FILE|grep DroidSansFallback.ttf) ]; then
 sed -i 's/<\/familyset>/<family>\n<font weight="400" style="normal">DroidSansFallback.ttf<\/font>\n<\/family>\n<\/familyset>/g' $MODPATH$FILEPATH$FILE
 fi
+fi
 done
 ui_print "- Migration done."
 rm $MODPATH/LICENSE* 2>/dev/null
