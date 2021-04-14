@@ -8,6 +8,7 @@ jobs:
     - name: Make release zip
       run: |
         rm -rf ./.git
+        rm -rf ./pics/
         wget https://github.com/topjohnwu/Magisk/raw/master/scripts/module_installer.sh -O META-INF/com/google/android/update-binary
         zip -9 -r ../notocjk.zip ./*
         sha256sum ../notocjk.zip > ../notocjk.zip.sha256sum
