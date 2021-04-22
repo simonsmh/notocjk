@@ -19,8 +19,9 @@ Currently, this module is still maintained. It was used to be stored at official
 * You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery.
 
 * Recent fixes:
-
-Update for NotoSansCJK 2.003
+- Update for NotoSansCJK 2.003
+- Fix remove cmap entries for characters that should default to emoji style in Android. (#21)
+- Add support for OnePlus shits. (#24)
 
 * Known issues:
 
