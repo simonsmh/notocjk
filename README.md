@@ -20,6 +20,7 @@ Currently, this module is still maintained. It was used to be stored at official
 
 * Recent fixes:
 - Update for NotoSansCJK 2.003
+- Support Contextual Half-width Spacing.
 - Fix remove cmap entries for characters that should default to emoji style in Android. (#21)
 - Add support for OnePlus shits. (#24)
 
