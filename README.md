@@ -44,6 +44,8 @@ Some Emoji doesn't display by Noto Color Emoji. [#21](https://github.com/simonsm
 
 HK fonts style is pending & waiting for Google solution in later android versions.
 
+Font weight in Firefox is not current (all be thin).
+
 Android 12 may crash in some app after installed version 10 and above with Magisk Hide enabled. See: (Chinese only, more details of logs in comments) https://t.me/magiskalpha/297
 
 ## Credit & Support
