@@ -36,13 +36,15 @@ Before:
 
 * Recent fixes:
 
+From upstream: [Variable font version could not display some symbols · Issue #296 · adobe-fonts/source-han-sans](https://github.com/adobe-fonts/source-han-sans/issues/296) (Thanks to [@AokiFuru](https://github.com/AokiFuru) [#25](https://github.com/simonsmh/notocjk/issues/25))
+
 Some Emoji doesn't display by Noto Color Emoji. [#21](https://github.com/simonsmh/notocjk/issues/21)
 
 * Known issues:
 
 HK fonts style is pending & waiting for Google solution in later android versions.
 
-Variable font support is broken until the fix from upsteam. ([Variable font version could not display some symbols · Issue #296 · adobe-fonts/source-han-sans](https://github.com/adobe-fonts/source-han-sans/issues/296))
+Android 12 may crash in some app after installed version 10 and above with Magisk Hide enabled. See: (Chinese only, more details of logs in comments) https://t.me/magiskalpha/297
 
 ## Credit & Support
 
