@@ -36,9 +36,7 @@ Before:
 
 * Recent fixes:
 
-From upstream: [Variable font version could not display some symbols · Issue #296 · adobe-fonts/source-han-sans](https://github.com/adobe-fonts/source-han-sans/issues/296) (Thanks to [@AokiFuru](https://github.com/AokiFuru) [#25](https://github.com/simonsmh/notocjk/issues/25))
-
-Some Emoji doesn't display by Noto Color Emoji. [#21](https://github.com/simonsmh/notocjk/issues/21)
+Update for NotoSansCJK 2.004 cmapfix
 
 * Known issues:
 
