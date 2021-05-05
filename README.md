@@ -19,7 +19,7 @@ Currently, this module is still maintained. It was used to be stored at official
 * You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery.
 
 * Recent fixes:
-- Update for NotoSansCJK 2.004
+- Update for NotoSansCJK 2.004 cmapfix
 - Support Contextual Half-width Spacing.
 
 * Known issues:
