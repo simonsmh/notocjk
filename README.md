@@ -2,10 +2,9 @@
 [![Upload zip](https://github.com/simonsmh/notocjk/workflows/Upload%20zip/badge.svg)](https://github.com/simonsmh/notocjk/actions)
 [![Download](https://img.shields.io/github/downloads/simonsmh/notocjk/total.svg)](https://github.com/simonsmh/notocjk/releases)
 
-NotoSansCJK & NotoSerifCJK full weight patch for Android devices.
+NotoSansCJK full weight patch for Android devices.
 
 * NotoSansCJK VF support as full weight patch applies to Android O+
-* NotoSerifCJK full weight patch applies to Android P+
 
 Fonts are provided by [Google](https://github.com/googlefonts/noto-cjk).
 
@@ -18,29 +17,13 @@ Currently, this module is still maintained. It was used to be stored at official
 
 * You should use latest Magisk Manager to install this module. If you meet any problem under installation from Magisk Manager, please try to install it from recovery.
 
-* New features:
-
-Support [Contextual Half-width Spacing](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-chws).
-
-[Try](https://kojiishi.github.io/chws/test.html) (Scrolling down to the 35.)
-
-![Contextual Half-width Spacing in Sans](https://github.com/simonsmh/notocjk/blob/master/pics/Screenshot_20210415-005721_Firefox.png?raw=true)
-![Contextual Half-width Spacing in Serif](https://github.com/simonsmh/notocjk/blob/master/pics/Screenshot_20210415-005701_Firefox.png?raw=true)
-
-Before:
-
-![No Support for Contextual Half-width Spacing in Sans](https://github.com/simonsmh/notocjk/blob/master/pics/Screenshot_20210415-010033_Firefox.png?raw=true)
-![No Support for Contextual Half-width Spacing in Serif](https://github.com/simonsmh/notocjk/blob/master/pics/Screenshot_20210415-010042_Firefox.png?raw=true)
-
 * Recent fixes:
 
-Some Emoji doesn't display by Noto Color Emoji. [#21](https://github.com/simonsmh/notocjk/issues/21)
+Update for NotoSansCJK 2.004 cmapfix
 
 * Known issues:
 
 HK fonts style is pending & waiting for Google solution in later android versions.
-
-Variable font support is broken until the fix from upsteam. ([Variable font version could not display some symbols · Issue #296 · adobe-fonts/source-han-sans](https://github.com/adobe-fonts/source-han-sans/issues/296))
 
 ## Credit & Support
 
