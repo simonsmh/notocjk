@@ -42,7 +42,7 @@ Update for NotoSansCJK 2.004 cmapfix
 
 HK fonts style is pending & waiting for Google solution in later android versions.
 
-Font weight in Firefox is not current (all be thin).
+Font weight in Firefox is not current (all be thin) if force it to use Noto Sans CJK VF. ([#28](https://github.com/simonsmh/notocjk/issues/28))
 
 Android 12 may crash in some app after installed version 10 and above with Magisk Hide enabled. See: (Chinese only, more details of logs in comments) https://t.me/magiskalpha/297
 
