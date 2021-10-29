@@ -22,7 +22,7 @@ Currently, this module is still maintained. It was used to be stored at official
 
 Upgrade Noto Serif CJK to 2.000(R) that supports variable fonts.
 
-![Noto Serif CJK variable test](https://github.com/simonsmh/notocjk/blob/master/extra/serif-variable-test.gif?raw=true)
+![Noto Serif CJK variable test](extra/serif-variable-test.gif)
 
 * Recent fixes:
 
