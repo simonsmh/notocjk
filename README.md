@@ -20,23 +20,13 @@ Currently, this module is still maintained. It was used to be stored at official
 
 * New features:
 
-Support [Contextual Half-width Spacing](https://docs.microsoft.com/en-us/typography/opentype/spec/features_ae#tag-chws).
+Upgrade Noto Serif CJK to 2.000(R) that supports variable fonts.
 
-[Try](https://kojiishi.github.io/chws/test.html) 
-
-(Scrolling down to the 35. Install [Firefox](https://play.google.com/store/apps/details?id=org.mozilla.firefox) for serif testing.)
-
-![Contextual Half-width Spacing in Sans](https://github.com/simonsmh/notocjk/blob/master/pics/Screenshot_20210415-005721_Firefox.png?raw=true)
-![Contextual Half-width Spacing in Serif](https://github.com/simonsmh/notocjk/blob/master/pics/Screenshot_20210415-005701_Firefox.png?raw=true)
-
-Before:
-
-![No Support for Contextual Half-width Spacing in Sans](https://github.com/simonsmh/notocjk/blob/master/pics/Screenshot_20210415-010033_Firefox.png?raw=true)
-![No Support for Contextual Half-width Spacing in Serif](https://github.com/simonsmh/notocjk/blob/master/pics/Screenshot_20210415-010042_Firefox.png?raw=true)
+![Noto Serif CJK variable test](https://github.com/simonsmh/notocjk/blob/master/extra/serif-variable-test.mp4?raw=true)
 
 * Recent fixes:
 
-Update for NotoSansCJK 2.004 cmapfix
+Remove cmap and add chws for Noto Serif CJK.
 
 * Known issues:
 
