@@ -1,5 +1,6 @@
 [ -x "$(which magisk)" ] && MIRRORPATH=$(magisk --path)/.magisk/mirror || unset MIRRORPATH
 FILES="fonts.xml fonts_base.xml"
+FILE_CUSTOM_WITH_PATH=/product/etc/fonts_customization.xml
 FILEPATH=/system/etc/
 for FILE in $FILES
 do
@@ -43,5 +44,23 @@ fi
 sed -i 's/<\/familyset>/<family>\n<font weight="400" style="normal">DroidSansFallbackFull.ttf<\/font>\n<\/family>\n<\/familyset>/g' $MODPATH$FILEPATH$FILE
 fi
 done
+if [ -f $MIRRORPATH$FILE_CUSTOM_WITH_PATH ]; then
+sed -i '
+/<family customizationType=\"new-named-family\" name=\"google-sans-medium\">/,/<\/family>/ {/<\/family>/! d;
+/<\/family>/ s/.*/  <alias name="google-sans-medium" to="google-sans" weight="500" \/>/};
+/<family customizationType=\"new-named-family\" name=\"google-sans-bold\">/,/<\/family>/ {/<\/family>/! d;
+/<\/family>/ s/.*/  <alias name="google-sans-bold" to="google-sans" weight="700" \/>/};
+/<family customizationType=\"new-named-family\" name=\"google-sans-text-medium\">/,/<\/family>/ {/<\/family>/! d;
+/<\/family>/ s/.*/  <alias name="google-sans-text-medium" to="google-sans-text" weight="500" \/>/};
+/<family customizationType=\"new-named-family\" name=\"google-sans-text-bold\">/,/<\/family>/ {/<\/family>/! d;
+/<\/family>/ s/.*/  <alias name="google-sans-text-bold" to="google-sans-text" weight="700" \/>/};
+/<family customizationType=\"new-named-family\" name=\"google-sans-text-italic\">/,/<\/family>/ {/<\/family>/! d;
+/<\/family>/ s/.*/  <alias name="google-sans-text-italic" to="google-sans-text" weight="400" style="italic" \/>/};
+/<family customizationType=\"new-named-family\" name=\"google-sans-text-italic-medium\">/,/<\/family>/ {/<\/family>/! d;
+/<\/family>/ s/.*/  <alias name="google-sans-text-italic-medium" to="google-sans-text" weight="500" style="italic" \/>/};
+/<family customizationType=\"new-named-family\" name=\"google-sans-text-italic-bold\">/,/<\/family>/ {/<\/family>/! d;
+/<\/family>/ s/.*/  <alias name="google-sans-text-italic-bold" to="google-sans-text" weight="700" style="italic" \/>/};
+' $MIRRORPATH$FILE_CUSTOM_WITH_PATH
+fi
 ui_print "- Migration done."
 rm $MODPATH/LICENSE* 2>/dev/null
