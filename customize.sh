@@ -1,6 +1,6 @@
 [ -x "$(which magisk)" ] && MIRRORPATH=$(magisk --path)/.magisk/mirror || unset MIRRORPATH
 FILES="fonts.xml fonts_base.xml"
-FILE_CUSTOM_WITH_PATH=/product/etc/fonts_customization.xml
+FILE_CUSTOM_WITH_PATH=/system/product/etc/fonts_customization.xml
 FILEPATH=/system/etc/
 for FILE in $FILES
 do
