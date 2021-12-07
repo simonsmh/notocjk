@@ -26,7 +26,7 @@ Upgrade Noto Serif CJK to 2.000(R) that supports variable fonts.
 
 * Recent fixes:
 
-Support postScriptName for Android 12 #31
+Fix problem about Google Sans [#32](https://github.com/simonsmh/notocjk/issues/32)
 
 * Known issues:
 
