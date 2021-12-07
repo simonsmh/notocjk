@@ -1,7 +1,8 @@
 [ -x "$(which magisk)" ] && MIRRORPATH=$(magisk --path)/.magisk/mirror || unset MIRRORPATH
 FILES="fonts.xml fonts_base.xml"
-FILE_CUSTOM_WITH_PATH=/system/product/etc/fonts_customization.xml
+FILECUSTOM=fonts_customization.xml
 FILEPATH=/system/etc/
+FILECUSTOMPATH=/system/product/etc/
 for FILE in $FILES
 do
 if [ $API -ge "26" ] && [ -f $MIRRORPATH$FILEPATH$FILE ]; then
@@ -44,7 +45,10 @@ fi
 sed -i 's/<\/familyset>/<family>\n<font weight="400" style="normal">DroidSansFallbackFull.ttf<\/font>\n<\/family>\n<\/familyset>/g' $MODPATH$FILEPATH$FILE
 fi
 done
-if [ -f $MIRRORPATH$FILE_CUSTOM_WITH_PATH ]; then
+if [ -f $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM ]; then
+ui_print "- Migrating $FILE_CUSTOM"
+mkdir -p $MODPATH$FILECUSTOMPATH
+cp -af $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM $MODPATH$FILECUSTOMPATH$FILECUSTOM
 sed -i '
 /<family customizationType=\"new-named-family\" name=\"google-sans-medium\">/,/<\/family>/ {/<\/family>/! d;
 /<\/family>/ s/.*/  <alias name="google-sans-medium" to="google-sans" weight="500" \/>/};
@@ -60,7 +64,7 @@ sed -i '
 /<\/family>/ s/.*/  <alias name="google-sans-text-italic-medium" to="google-sans-text" weight="500" style="italic" \/>/};
 /<family customizationType=\"new-named-family\" name=\"google-sans-text-italic-bold\">/,/<\/family>/ {/<\/family>/! d;
 /<\/family>/ s/.*/  <alias name="google-sans-text-italic-bold" to="google-sans-text" weight="700" style="italic" \/>/};
-' $MODPATH$FILE_CUSTOM_WITH_PATH
+' $MODPATH$FILECUSTOMPATH$FILECUSTOM
 fi
 ui_print "- Migration done."
 rm $MODPATH/LICENSE* 2>/dev/null
