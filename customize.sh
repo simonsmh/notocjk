@@ -60,10 +60,10 @@ sed -i '
 /<\/family>/ s/.*/  <alias name="google-sans-text-bold" to="google-sans-text" weight="700" \/>/};
 /<family customizationType=\"new-named-family\" name=\"google-sans-text-italic\">/,/<\/family>/ {/<\/family>/! d;
 /<\/family>/ s/.*/  <alias name="google-sans-text-italic" to="google-sans-text" weight="400" style="italic" \/>/};
-/<family customizationType=\"new-named-family\" name=\"google-sans-text-italic-medium\">/,/<\/family>/ {/<\/family>/! d;
-/<\/family>/ s/.*/  <alias name="google-sans-text-italic-medium" to="google-sans-text" weight="500" style="italic" \/>/};
-/<family customizationType=\"new-named-family\" name=\"google-sans-text-italic-bold\">/,/<\/family>/ {/<\/family>/! d;
-/<\/family>/ s/.*/  <alias name="google-sans-text-italic-bold" to="google-sans-text" weight="700" style="italic" \/>/};
+/<family customizationType=\"new-named-family\" name=\"google-sans-text-medium-italic\">/,/<\/family>/ {/<\/family>/! d;
+/<\/family>/ s/.*/  <alias name="google-sans-text-medium-italic" to="google-sans-text" weight="500" style="italic" \/>/};
+/<family customizationType=\"new-named-family\" name=\"google-sans-text-bold-italic\">/,/<\/family>/ {/<\/family>/! d;
+/<\/family>/ s/.*/  <alias name="google-sans-text-bold-italic" to="google-sans-text" weight="700" style="italic" \/>/};
 ' $MODPATH$FILECUSTOMPATH$FILECUSTOM
 fi
 ui_print "- Migration done."
