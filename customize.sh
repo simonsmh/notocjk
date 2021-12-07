@@ -60,7 +60,7 @@ sed -i '
 /<\/family>/ s/.*/  <alias name="google-sans-text-italic-medium" to="google-sans-text" weight="500" style="italic" \/>/};
 /<family customizationType=\"new-named-family\" name=\"google-sans-text-italic-bold\">/,/<\/family>/ {/<\/family>/! d;
 /<\/family>/ s/.*/  <alias name="google-sans-text-italic-bold" to="google-sans-text" weight="700" style="italic" \/>/};
-' $MIRRORPATH$FILE_CUSTOM_WITH_PATH
+' $MODPATH$FILE_CUSTOM_WITH_PATH
 fi
 ui_print "- Migration done."
 rm $MODPATH/LICENSE* 2>/dev/null
