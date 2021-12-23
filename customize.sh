@@ -3,6 +3,7 @@ FILES="fonts.xml fonts_base.xml"
 FILECUSTOM=fonts_customization.xml
 FILEPATH=/system/etc/
 FILECUSTOMPATH=/product/etc/
+CUSTOMTOMOD=/system/product/etc/
 for FILE in $FILES
 do
 if [ $API -ge "26" ] && [ -f $MIRRORPATH$FILEPATH$FILE ]; then
@@ -47,8 +48,8 @@ fi
 done
 if [ -f $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM ]; then
 ui_print "- Migrating $FILECUSTOM"
-mkdir -p $MODPATH$FILECUSTOMPATH
-cp -af $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM $MODPATH$FILECUSTOMPATH$FILECUSTOM
+mkdir -p $MODPATH$CUSTOMTOMOD
+cp -af $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM $MODPATH$CUSTOMTOMOD$FILECUSTOM
 sed -i '
 /<family customizationType=\"new-named-family\" name=\"google-sans-medium\">/,/<\/family>/ {/<\/family>/! d;
 /<\/family>/ s/.*/  <alias name="google-sans-medium" to="google-sans" weight="500" \/>/};
@@ -64,7 +65,7 @@ sed -i '
 /<\/family>/ s/.*/  <alias name="google-sans-text-medium-italic" to="google-sans-text" weight="500" style="italic" \/>/};
 /<family customizationType=\"new-named-family\" name=\"google-sans-text-bold-italic\">/,/<\/family>/ {/<\/family>/! d;
 /<\/family>/ s/.*/  <alias name="google-sans-text-bold-italic" to="google-sans-text" weight="700" style="italic" \/>/};
-' $MODPATH$FILECUSTOMPATH$FILECUSTOM
+' $MODPATH$CUSTOMTOMOD$FILECUSTOM
 fi
 ui_print "- Migration done."
 rm $MODPATH/LICENSE* 2>/dev/null
