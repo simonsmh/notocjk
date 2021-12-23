@@ -2,7 +2,7 @@
 FILES="fonts.xml fonts_base.xml"
 FILECUSTOM=fonts_customization.xml
 FILEPATH=/system/etc/
-FILECUSTOMPATH=/system/product/etc/
+FILECUSTOMPATH=/product/etc/
 for FILE in $FILES
 do
 if [ $API -ge "26" ] && [ -f $MIRRORPATH$FILEPATH$FILE ]; then
@@ -46,7 +46,7 @@ sed -i 's/<\/familyset>/<family>\n<font weight="400" style="normal">DroidSansFal
 fi
 done
 if [ -f $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM ]; then
-ui_print "- Migrating $FILE_CUSTOM"
+ui_print "- Migrating $FILECUSTOM"
 mkdir -p $MODPATH$FILECUSTOMPATH
 cp -af $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM $MODPATH$FILECUSTOMPATH$FILECUSTOM
 sed -i '
