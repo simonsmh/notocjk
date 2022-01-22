@@ -2,14 +2,14 @@
 FILES="fonts.xml fonts_base.xml"
 FILECUSTOM=fonts_customization.xml
 FILEPATH=/system/etc/
-FILECUSTOMPATH=/product/etc/
-CUSTOMTOMOD=/system/product/etc/
 for FILE in $FILES
 do
 if [ $API -ge "26" ] && [ -f $MIRRORPATH$FILEPATH$FILE ]; then
 ui_print "- Migrating $FILE"
 mkdir -p $MODPATH$FILEPATH
 cp -af $MIRRORPATH$FILEPATH$FILE $MODPATH$FILEPATH$FILE
+# Disable MiSans for debugging
+# sed -i '/<!-- # MIUI Edit Start -->/,/<!-- # MIUI Edit END -->/d;/<!-- MIUI fonts begin \/-->/,/<!-- MIUI fonts end \/-->/d;' $MODPATH$FILEPATH$FILE 
 sed -i 's/<alias name="serif-bold" to="serif" weight="700" \/>/<alias name="serif-thin" to="serif" weight="100" \/>\n<alias name="serif-light" to="serif" weight="300" \/>\n<alias name="serif-medium" to="serif" weight="400" \/>\n<alias name="serif-semi-bold" to="serif" weight="500" \/>\n<alias name="serif-bold" to="serif" weight="700" \/>\n<alias name="serif-black" to="serif" weight="900" \/>/g
 ' $MODPATH$FILEPATH$FILE
 sed -i '
@@ -46,10 +46,15 @@ fi
 sed -i 's/<\/familyset>/<family>\n<font weight="400" style="normal">DroidSansFallbackFull.ttf<\/font>\n<\/family>\n<\/familyset>/g' $MODPATH$FILEPATH$FILE
 fi
 done
+FILECUSTOM=fonts_customization.xml
+FILECUSTOMPATH=/product/etc/
+# magisk mirror compatbility
+SYSTEMFILECUSTOMPATH=/system$FILECUSTOMPATH
 if [ -f $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM ]; then
 ui_print "- Migrating $FILECUSTOM"
-mkdir -p $MODPATH$CUSTOMTOMOD
-cp -af $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM $MODPATH$CUSTOMTOMOD$FILECUSTOM
+mkdir -p $MODPATH$SYSTEMFILECUSTOMPATH
+if [ $(grep "google-sans" $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM) ]; then
+# Google Pixel's RRO
 sed -i '
 /<family customizationType=\"new-named-family\" name=\"google-sans-medium\">/,/<\/family>/ {/<\/family>/! d;
 /<\/family>/ s/.*/  <alias name="google-sans-medium" to="google-sans" weight="500" \/>/};
@@ -65,7 +70,14 @@ sed -i '
 /<\/family>/ s/.*/  <alias name="google-sans-text-medium-italic" to="google-sans-text" weight="500" style="italic" \/>/};
 /<family customizationType=\"new-named-family\" name=\"google-sans-text-bold-italic\">/,/<\/family>/ {/<\/family>/! d;
 /<\/family>/ s/.*/  <alias name="google-sans-text-bold-italic" to="google-sans-text" weight="700" style="italic" \/>/};
-' $MODPATH$CUSTOMTOMOD$FILECUSTOM
+' $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM > $MODPATH$SYSTEMFILECUSTOMPATH$FILECUSTOM
+else
+# RRO oem fonts customization https://source.android.com/devices/automotive/hmi/car_ui/fonts
+# TODO: pattern for general customizationType
+ui_print "================================="
+ui_print "! Please report your $FILECUSTOMPATH$FILECUSTOM."
+ui_print "================================="
+fi
 fi
 ui_print "- Migration done."
 rm $MODPATH/LICENSE* 2>/dev/null
