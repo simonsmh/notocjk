@@ -2,8 +2,6 @@
 FILES="fonts.xml fonts_base.xml"
 FILECUSTOM=fonts_customization.xml
 FILEPATH=/system/etc/
-FILECUSTOMPATH=/product/etc/
-CUSTOMTOMOD=/system/product/etc/
 for FILE in $FILES
 do
 if [ $API -ge "26" ] && [ -f $MIRRORPATH$FILEPATH$FILE ]; then
