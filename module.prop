@@ -4,3 +4,4 @@ version=19 (Sans-2.004-VF/Serif-2.000R)
 versionCode=19
 author=simonsmh
 description=NotoCJK (NotoSansCJK & NotoSerifCJK) full weight fonts patch for every Android devices.
+updateJson=https://cdn.jsdelivr.net/gh/simonsmh/notocjk@master/version.json
