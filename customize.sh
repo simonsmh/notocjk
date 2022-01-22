@@ -49,7 +49,7 @@ SYSTEMFILECUSTOMPATH=/system$FILECUSTOMPATH
 if [ -f $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM ]; then
 ui_print "- Migrating $FILECUSTOM"
 mkdir -p $MODPATH$SYSTEMFILECUSTOMPATH
-if [ $(grep "google-sans" $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM) ]; then
+if grep "google-sans" $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM ; then
 # Google Pixel's RRO
 sed -i '
 /<family customizationType=\"new-named-family\" name=\"google-sans-medium\">/,/<\/family>/ {/<\/family>/! d;
