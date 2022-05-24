@@ -71,12 +71,12 @@ sed '
 /<family customizationType=\"new-named-family\" name=\"google-sans-text-bold-italic\">/,/<\/family>/ {/<\/family>/! d;
 /<\/family>/ s/.*/  <alias name="google-sans-text-bold-italic" to="google-sans-text" weight="700" style="italic" \/>/};
 ' $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM > $MODPATH$SYSTEMFILECUSTOMPATH$FILECUSTOM
-else
+# else
 # RRO oem fonts customization https://source.android.com/devices/automotive/hmi/car_ui/fonts
 # TODO: pattern for general customizationType
-ui_print "================================="
-ui_print "! Please report your $FILECUSTOMPATH$FILECUSTOM."
-ui_print "================================="
+# ui_print "================================="
+# ui_print "! Please report your $FILECUSTOMPATH$FILECUSTOM."
+# ui_print "================================="
 fi
 fi
 ui_print "- Migration done."
