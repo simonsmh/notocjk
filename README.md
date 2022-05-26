@@ -26,7 +26,7 @@ Upgrade Noto Serif CJK to 2.000(R) that supports variable fonts.
 
 * Recent fixes:
 
-Fix problem about Google Sans [#32](https://github.com/simonsmh/notocjk/issues/32)
+Support system_ext [#40](https://github.com/simonsmh/notocjk/issues/40)
 
 * Known issues:
 
@@ -38,6 +38,6 @@ Android 12 may crash in some app after installed version 10 and above with Magis
 
 ## Credit & Support
 
-* Copyright (C) 2017-2021 simonsmh <simonsmh@gmail.com>
+* Copyright (C) 2017-2022 simonsmh <simonsmh@gmail.com>
 * Any issue or pull request is welcomed.
 * Star this module at [GitHub](https://github.com/simonsmh/notocjk).
