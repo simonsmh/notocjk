@@ -1,7 +1,7 @@
 id=notocjk
 name=NotoCJK
-version=22 (Sans-2.004-VF/Serif-2.000R)
-versionCode=22
+version=23 (Sans-2.004-VF/Serif-2.002-VF)
+versionCode=23
 author=simonsmh
 description=NotoCJK (NotoSansCJK & NotoSerifCJK) full weight fonts patch for every Android devices.
 updateJson=https://cdn.jsdelivr.net/gh/simonsmh/notocjk/version.json
