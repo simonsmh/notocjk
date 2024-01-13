@@ -1,4 +1,15 @@
-[ -x "$(which magisk)" ] && MIRRORPATH=$(magisk --path)/.magisk/mirror || unset MIRRORPATH
+if [ "$MAGISK_VER_CODE" -lt 24000 ]; then
+ui_print "*********************************************************"
+ui_print "! Please install Magisk v24+"
+abort    "*********************************************************"
+fi
+if [ "$API" -lt 26 ]; then
+ui_print "*********************************************************"
+ui_print "! Please upgrade your system to Android 8+"
+abort    "*********************************************************"
+fi
+
+[ -x "$(which magisk)" ] && CMDPREFIX="magisk --denylist exec" || unset CMDPREFIX
 FILES="fonts.xml fonts_base.xml"
 FILECUSTOM=fonts_customization.xml
 FILEPATHS="/system/etc/ /system_ext/etc/"
@@ -6,14 +17,14 @@ for FILE in $FILES
 do
 for FILEPATH in $FILEPATHS
 do
-if [ $API -ge "26" ] && [ -f $MIRRORPATH$FILEPATH$FILE ]; then
+if [ -f $FILEPATH$FILE ]; then
 ui_print "- Migrating $FILE"
 case "$FILEPATH" in
 /system/*) SYSTEMFILEPATH=$FILEPATH ;;
 *) SYSTEMFILEPATH=/system$FILEPATH ;;
 esac
 mkdir -p $MODPATH$FILEPATH
-cp -af $MIRRORPATH$FILEPATH$FILE $MODPATH$SYSTEMFILEPATH$FILE
+$CMDPREFIX cp -af $FILEPATH$FILE $MODPATH$SYSTEMFILEPATH$FILE
 # Disable MiSans for debugging
 # sed -i '/<!-- # MIUI Edit Start -->/,/<!-- # MIUI Edit END -->/d;/<!-- MIUI fonts begin \/-->/,/<!-- MIUI fonts end \/-->/d;' $MODPATH$SYSTEMFILEPATH$FILE 
 # Disable OPlusSans for debugging
@@ -48,9 +59,7 @@ sed -i '
 /<family lang=\"ko\">/,/<\/family>/ {:a;N;/<\/family>/!ba;
 s/<family lang=\"ko\">.*Noto.*CJK.*<\/family>/<family lang="ko">\n<font weight="100" style="normal" index="1" postScriptName="NotoSansCJKjp-Thin">NotoSansCJK-VF.otf.ttc<axis tag="wght" stylevalue="100" \/><\/font>\n<font weight="300" style="normal" index="1" postScriptName="NotoSansCJKjp-Thin">NotoSansCJK-VF.otf.ttc<axis tag="wght" stylevalue="300" \/><\/font>\n<font weight="400" style="normal" index="1" postScriptName="NotoSansCJKjp-Thin">NotoSansCJK-VF.otf.ttc<axis tag="wght" stylevalue="400" \/><\/font>\n<font weight="500" style="normal" index="1" postScriptName="NotoSansCJKjp-Thin">NotoSansCJK-VF.otf.ttc<axis tag="wght" stylevalue="500" \/><\/font>\n<font weight="600" style="normal" index="1" postScriptName="NotoSansCJKjp-Thin">NotoSansCJK-VF.otf.ttc<axis tag="wght" stylevalue="600" \/><\/font>\n<font weight="700" style="normal" index="1" postScriptName="NotoSansCJKjp-Thin">NotoSansCJK-VF.otf.ttc<axis tag="wght" stylevalue="700" \/><\/font>\n<font weight="900" style="normal" index="1" postScriptName="NotoSansCJKjp-Thin">NotoSansCJK-VF.otf.ttc<axis tag="wght" stylevalue="900" \/><\/font>\n<font weight="200" style="normal" index="1" fallbackFor="serif" postScriptName="NotoSerifCJKjp-ExtraLight">NotoSerifCJK-VF.otf.ttc<axis tag="wght" stylevalue="200" \/><\/font>\n<font weight="300" style="normal" index="1" fallbackFor="serif" postScriptName="NotoSerifCJKjp-ExtraLight">NotoSerifCJK-VF.otf.ttc<axis tag="wght" stylevalue="300" \/><\/font>\n<font weight="400" style="normal" index="1" fallbackFor="serif" postScriptName="NotoSerifCJKjp-ExtraLight">NotoSerifCJK-VF.otf.ttc<axis tag="wght" stylevalue="400" \/><\/font>\n<font weight="500" style="normal" index="1" fallbackFor="serif" postScriptName="NotoSerifCJKjp-ExtraLight">NotoSerifCJK-VF.otf.ttc<axis tag="wght" stylevalue="500" \/><\/font>\n<font weight="600" style="normal" index="1" fallbackFor="serif" postScriptName="NotoSerifCJKjp-ExtraLight">NotoSerifCJK-VF.otf.ttc<axis tag="wght" stylevalue="600" \/><\/font>\n<font weight="700" style="normal" index="1" fallbackFor="serif" postScriptName="NotoSerifCJKjp-ExtraLight">NotoSerifCJK-VF.otf.ttc<axis tag="wght" stylevalue="700" \/><\/font>\n<font weight="900" style="normal" index="1" fallbackFor="serif" postScriptName="NotoSerifCJKjp-ExtraLight">NotoSerifCJK-VF.otf.ttc<axis tag="wght" stylevalue="900" \/><\/font>\n<\/family>\n<family lang="ko">\n<font weight="400" style="normal" index="1" postScriptName="NotoSansCJKjp-Regular">NotoSansCJK-Regular.ttc<\/font>\n<font weight="400" style="normal" index="1" fallbackFor="serif" postScriptName="NotoSerifCJKjp-Regular">NotoSerifCJK-Regular.ttc<\/font>\n<\/family>/};
 ' $MODPATH$SYSTEMFILEPATH$FILE
-if [ ! $(cat $MODPATH$SYSTEMFILEPATH$FILE|grep DroidSansFallback.ttf) ]; then
-sed -i 's/<\/familyset>/<family>\n<font weight="400" style="normal">DroidSansFallback.ttf<\/font>\n<\/family>\n<\/familyset>/g' $MODPATH$SYSTEMFILEPATH$FILE
-fi
+grep -q DroidSansFallback.ttf $MODPATH$SYSTEMFILEPATH$FILE || sed -i 's/<\/familyset>/<family>\n<font weight="400" style="normal">DroidSansFallback.ttf<\/font>\n<\/family>\n<\/familyset>/g' $MODPATH$SYSTEMFILEPATH$FILE
 sed -i 's/<\/familyset>/<family>\n<font weight="400" style="normal">DroidSansFallbackFull.ttf<\/font>\n<\/family>\n<\/familyset>/g' $MODPATH$SYSTEMFILEPATH$FILE
 fi
 done
@@ -59,12 +68,13 @@ FILECUSTOM=fonts_customization.xml
 FILECUSTOMPATH=/product/etc/
 # magisk mirror compatbility
 SYSTEMFILECUSTOMPATH=/system$FILECUSTOMPATH
-if [ -f $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM ]; then
+if [ -f $FILECUSTOMPATH$FILECUSTOM ]; then
 ui_print "- Migrating $FILECUSTOM"
 mkdir -p $MODPATH$SYSTEMFILECUSTOMPATH
-if grep -q "google-sans" $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM ; then
+if $CMDPREFIX grep -q "google-sans" $FILECUSTOMPATH$FILECUSTOM ; then
 # Google Pixel's RRO
-sed '
+$CMDPREFIX cp -af $FILECUSTOMPATH$FILECUSTOM $MODPATH$SYSTEMFILECUSTOMPATH$FILECUSTOM
+sed -i '
 /<family customizationType=\"new-named-family\" name=\"google-sans-medium\">/,/<\/family>/ {/<\/family>/! d;
 /<\/family>/ s/.*/  <alias name="google-sans-medium" to="google-sans" weight="500" \/>/};
 /<family customizationType=\"new-named-family\" name=\"google-sans-bold\">/,/<\/family>/ {/<\/family>/! d;
@@ -79,7 +89,7 @@ sed '
 /<\/family>/ s/.*/  <alias name="google-sans-text-medium-italic" to="google-sans-text" weight="500" style="italic" \/>/};
 /<family customizationType=\"new-named-family\" name=\"google-sans-text-bold-italic\">/,/<\/family>/ {/<\/family>/! d;
 /<\/family>/ s/.*/  <alias name="google-sans-text-bold-italic" to="google-sans-text" weight="700" style="italic" \/>/};
-' $MIRRORPATH$FILECUSTOMPATH$FILECUSTOM > $MODPATH$SYSTEMFILECUSTOMPATH$FILECUSTOM
+' $MODPATH$SYSTEMFILECUSTOMPATH$FILECUSTOM
 # else
 # RRO oem fonts customization https://source.android.com/devices/automotive/hmi/car_ui/fonts
 # TODO: pattern for general customizationType
