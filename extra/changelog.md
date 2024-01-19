@@ -1,3 +1,7 @@
+# Changelog v25
+
+- Support 3rd party Magisk versions with magiskhide.
+
 # Changelog v24
 
 - Fixes for Magisk Canary(26404) support. Dropping copies of fonts from internal mirror mount point. [#48](https://github.com/simonsmh/notocjk/issues/48)

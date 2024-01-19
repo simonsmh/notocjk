@@ -1,15 +1,15 @@
-if [ "$MAGISK_VER_CODE" -lt 24000 ]; then
-ui_print "*********************************************************"
-ui_print "! Please install Magisk v24+"
-abort    "*********************************************************"
-fi
 if [ "$API" -lt 26 ]; then
 ui_print "*********************************************************"
 ui_print "! Please upgrade your system to Android 8+"
 abort    "*********************************************************"
 fi
-
-[ -x "$(which magisk)" ] && CMDPREFIX="magisk --denylist exec" || unset CMDPREFIX
+[ -x `which magisk` ] && {
+if magisk --denylist ls &>/dev/null; then
+CMDPREFIX="magisk --denylist exec"
+elif magisk magiskhide ls &>/dev/null; then
+CMDPREFIX="magisk magiskhide exec"
+fi
+} || unset CMDPREFIX
 FILES="fonts.xml fonts_base.xml"
 FILECUSTOM=fonts_customization.xml
 FILEPATHS="/system/etc/ /system_ext/etc/"
