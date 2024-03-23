@@ -10,7 +10,7 @@ elif magisk magiskhide ls &>/dev/null; then
 CMDPREFIX="magisk magiskhide exec"
 fi
 } || unset CMDPREFIX
-FILES="fonts.xml fonts_base.xml"
+FILES="fonts.xml fonts_base.xml font_fallback.xml"
 FILECUSTOM=fonts_customization.xml
 FILEPATHS="/system/etc/ /system_ext/etc/"
 for FILE in $FILES
