@@ -1,6 +1,7 @@
-# Changelog v26
+# Changelog v27
 
-Update Noto Serif CJK to [2.003](https://github.com/notofonts/noto-cjk/tree/9b0f1436e455d902de067a2501422e5dc71ad16b/Serif)
+* Added an installation warning for Android 15+
+* Removed an old font that prevent MinikinFont from loading with an NPE when Magisk/KernelSU triggers unmounting.
 
 > The fonts were modified by `subset_noto_cjk.py` to remove cmap entries for characters that should default to the emoji style on Android.
 > The fonts have been modified to include a `chws` table.
