@@ -4,14 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Make release zip
       run: |
         wget https://github.com/topjohnwu/Magisk/raw/master/scripts/module_installer.sh -O META-INF/com/google/android/update-binary
         zip -9 -x "*.git*" -x "extra/*" -x "extra" -r ../notocjk.zip ./
         sha256sum ../notocjk.zip > ../notocjk.zip.sha256sum
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
@@ -19,7 +19,7 @@ jobs:
           ../notocjk.zip.sha256sum
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v4
       with:
         name: notocjk
         path: ./
