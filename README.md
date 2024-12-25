@@ -14,7 +14,8 @@ Fonts files are provided by [noto-cjk](https://github.com/googlefonts/noto-cjk) 
 ![Noto Serif CJK variable test](extra/serif-variable-test.gif)
 
 ## NOTICE
-* You should use latest Magisk/KernelSU to install this module.
+* You should use latest Magisk/KernelSU/APatch to install this module.
+* Disable deny list/Close umount modules switchs.
 * For Android 15+, NotoSansCJK officially supports variable fonts but only within the weight range of 400-900. This module extends the range to 100-900.
 * Recent fixes:
   * Removed old fonts that prevent MinikinFont from loading with an NPE when Magisk/KernelSU triggers unmounting.
