@@ -1,8 +1,7 @@
-# Changelog v27
+# Changelog v28
 
-* Added an installation warning for Android 15+
-* Removed an old font that prevent MinikinFont from loading with an NPE when Magisk/KernelSU triggers unmounting.
+* Fonts patching on the fly. See [chws_subset](../chws_subset/__init__.py)
+* Removed old fonts that prevent MinikinFont from loading with an NPE when Magisk/KernelSU triggers unmounting.
 
-> The fonts were modified by `subset_noto_cjk.py` to remove cmap entries for characters that should default to the emoji style on Android.
-> The fonts have been modified to include a `chws` table.
-> See https://github.com/WordlessEcho/patch-noto-cjk-for-android for more details.
+> Fonts files are provided by [noto-cjk](https://github.com/googlefonts/noto-cjk) from Google.
+> The fonts have been modified using [chws_subset](../chws_subset/__init__.py). For more details, please visit https://github.com/WordlessEcho/patch-noto-cjk-for-android  

@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "test-chws-subset"
+version = "0.1.0"
+description = ""
+authors = ["Simon Shi <simonsmh@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+chws-tool = "^1.4.2"
+tqdm = "^4.67.1"
+notofonttools = "^0.2.20"
+httpx = "^0.28.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
