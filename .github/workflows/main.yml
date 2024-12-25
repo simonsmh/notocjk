@@ -8,16 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - name: Install poetry
+      run: pipx install poetry
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.13'
         cache: 'poetry'
-    - name: Install poetry
-      run: |
-        python -m pip install --upgrade pip
-        pip install poetry
-        poetry install
+    - run: poetry install
     - name: Run python script
       run: |
         poetry run python -m chws_subset
