@@ -21,19 +21,19 @@ jobs:
         poetry run python -m chws_subset
     - name: Make release zip
       run: |
-        zip -9 -x "*.git*" -x "chws_subset*" -x "extra*" -x "poetry.lock" -x "pyproject.toml" -r ../notocjk.zip ./
-        sha256sum ../notocjk.zip > ../notocjk.zip.sha256sum
+        zip -9 -x "*.git*" -x "chws_subset*" -x "extra*" -x "poetry.lock" -x "pyproject.toml" -r notocjk.zip ./
+        sha256sum notocjk.zip > notocjk.zip.sha256sum
     - name: Release
       uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          ../notocjk.zip
-          ../notocjk.zip.sha256sum
+          notocjk.zip
+          notocjk.zip.sha256sum
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - uses: actions/upload-artifact@v4
       with:
         name: notocjk
-        path: ../notocjk.zip
+        path: notocjk.zip
 
